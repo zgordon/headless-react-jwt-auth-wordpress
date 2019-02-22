@@ -3,9 +3,11 @@ import Post from "./Post";
 
 const Posts = props => {
   return (
-    <main id="main" className="site-main">
-      <Post />
-    </main>
+    <div id="primary" class="content-area">
+      <main id="main" className="site-main">
+        <Post />
+      </main>
+    </div>
   );
 };
 export default Posts;
