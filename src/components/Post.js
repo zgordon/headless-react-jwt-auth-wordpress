@@ -1,14 +1,18 @@
 import React from "react";
-
-const Post = props => {
+import { createDangerousHTML } from "../settings";
+const Post = ({ post }) => {
   return (
-    <article className="post">
+    <article className="post" key={post.id}>
       <h2 className="entry-title">
-        <a href="#ffff">ffff</a>
+        <a
+          href="#ffff"
+          dangerouslySetInnerHTML={createDangerousHTML(post.title.rendered)}
+        />
       </h2>
-      <div className="entry-content">
-        <p>fff</p>
-      </div>
+      <div
+        className="entry-content"
+        dangerouslySetInnerHTML={createDangerousHTML(post.content.rendered)}
+      />
       <a href="#edit-post" className="edit">
         Edit
       </a>

@@ -36,9 +36,12 @@ class App extends Component {
     console.log(settings.rest_route);
     return (
       <div className="page">
-        <Header />
+        <Header
+          siteName={this.state.siteName}
+          siteDescription={this.state.siteDescription}
+        />
         <div id="content" className="site-content">
-          <Posts />
+          <Posts posts={this.state.posts} />
           <Aside />
         </div>
         <Footer />
