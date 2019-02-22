@@ -2,8 +2,8 @@ import React from "react";
 
 const Header = props => {
   return (
-    <header id="masthead" class="site-header" role="banner">
-      <div class="site-branding">
+    <header id="masthead" className="site-header" role="banner">
+      <div className="site-branding">
         <p id="site-title">
           <a href="/#" rel="home">
             Headless WP
@@ -12,7 +12,7 @@ const Header = props => {
         <p id="site-description">With React</p>
       </div>
 
-      <nav id="site-navigation" class="main-navigation" role="navigation" />
+      <nav id="site-navigation" className="main-navigation" role="navigation" />
     </header>
   );
 };
