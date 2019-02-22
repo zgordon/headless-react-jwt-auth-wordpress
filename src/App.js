@@ -9,11 +9,26 @@ import "./App.css";
 import settings from "./settings";
 
 class App extends Component {
+  state = {
+    siteName: "",
+    siteDescription: "",
+    posts: []
+  };
   componentDidMount() {
+    fetch(`${settings.rest_route}`)
+      .then(response => response.json())
+      .then(settings => {
+        this.setState({
+          siteName: settings.name,
+          siteDescription: settings.description
+        });
+      })
+      .catch(error => console.error(error));
+
     fetch(`${settings.rest_route}wp/v2/posts`)
       .then(response => response.json())
       .then(posts => {
-        console.log(posts);
+        this.setState({ posts });
       })
       .catch(error => console.error(error));
   }
