@@ -11,7 +11,8 @@ const Post = ({ post }) => {
       </h2>
       <div
         className="entry-content"
-        dangerouslySetInnerHTML={createDangerousHTML(post.content.rendered)}
+        dangerouslySetInnerHTML={(() => ({ __html: post.content.rendered }))()}
+        // dangerouslySetInnerHTML={createDangerousHTML(post.content.rendered)}
       />
       <a href="#edit-post" className="edit">
         Edit
